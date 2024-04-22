@@ -1,30 +1,34 @@
 import 'package:e_commerce/config/routes/routes.dart';
 import 'package:e_commerce/core/enums/screen_status.dart';
-import 'package:e_commerce/features/login/data/dataSource/remote/remote_login_ds_impl.dart';
-import 'package:e_commerce/features/login/data/repositry/login_repo_impl.dart';
-import 'package:e_commerce/features/login/domain/usecases/login_useCase.dart';
-import 'package:e_commerce/features/login/presentaion/bloc/login_bloc.dart';
+import 'package:e_commerce/features/signUp/data/dataSource/remote/signUp_Ds_Impl.dart';
+import 'package:e_commerce/features/signUp/data/repositry/signUP_repo_impl.dart';
+import 'package:e_commerce/features/signUp/domain/entity/signUp_Request_Model.dart';
+import 'package:e_commerce/features/signUp/domain/repositry/SignUpRepo.dart';
+import 'package:e_commerce/features/signUp/domain/usecases/signUp_useCase.dart';
+import 'package:e_commerce/features/signUp/presentation/bloc/sign_up_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class logiScreen extends StatelessWidget {
-  logiScreen({super.key});
+class SignUpScreen extends StatelessWidget {
+  SignUpScreen({super.key});
 
   var emailController = TextEditingController();
+  var userNameController = TextEditingController();
+  var phoneController = TextEditingController();
   var passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => LoginBloc(
-        loginUseCase(
-          loginRepoImpl(
-            RemoteLoginDsImpl(),
+      create: (context) => SignUpBloc(
+        signUpUseCase(
+          SignUpRepoImpl(
+            signUpDsImpl(),
           ),
         ),
       ),
-      child: BlocConsumer<LoginBloc, LoginState>(
+      child: BlocConsumer<SignUpBloc, SignUpState>(
         listener: (context, state) {
           if (state.status == ScreenStatus.loading) {
             showDialog(
@@ -50,7 +54,7 @@ class logiScreen extends StatelessWidget {
           return Scaffold(
             backgroundColor: Colors.white,
             appBar: AppBar(
-              title: Text("Login "),
+              title: Text("SignUp "),
             ),
             body: SingleChildScrollView(
               child: Column(
@@ -59,13 +63,36 @@ class logiScreen extends StatelessWidget {
                     padding: const EdgeInsets.only(top: 60.0),
                   ),
                   Padding(
-                    //padding: const EdgeInsets.only(left:15.0,right: 15.0,top:0,bottom: 0),
                     padding: EdgeInsets.symmetric(horizontal: 15),
+                    child: TextFormField(
+                      controller: userNameController,
+                      decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(20)),
+                          labelText: 'User Name',
+                          hintText: 'Enter Your User Name'),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                        left: 15.0, right: 15.0, top: 30, bottom: 0),
+                    child: TextFormField(
+                      controller: phoneController,
+                      decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(20.r)),
+                          labelText: 'phone',
+                          hintText: 'Enter Your Phone'),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                        left: 15.0, right: 15.0, top: 30, bottom: 0),
                     child: TextFormField(
                       controller: emailController,
                       decoration: InputDecoration(
                           border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(20)),
+                              borderRadius: BorderRadius.circular(20.r)),
                           labelText: 'Email',
                           hintText: 'Enter valid email id as abc@gmail.com'),
                     ),
@@ -73,7 +100,6 @@ class logiScreen extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(
                         left: 15.0, right: 15.0, top: 30, bottom: 0),
-                    //padding: EdgeInsets.symmetric(horizontal: 15),
                     child: TextFormField(
                       controller: passwordController,
                       obscureText: true,
@@ -95,12 +121,17 @@ class logiScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(20)),
                     child: MaterialButton(
                       onPressed: () {
-                        BlocProvider.of<LoginBloc>(context).add(
-                            LoginButtonEvent(
-                                "ahmedmutti@gmail.com", "Ahmed@123"));
+                        signUpRequestModel requestModel = signUpRequestModel(
+                            name: "Ahmed",
+                            email: "ahmedTarek@gamil.com",
+                            phone: "01099461631",
+                            password: "123456789",
+                            rePassword: "123456789");
+                        BlocProvider.of<SignUpBloc>(context)
+                            .add(SignUpButtonEvent(requestModel));
                       },
                       child: Text(
-                        'Login',
+                        'SignUP',
                         style: TextStyle(color: Colors.white, fontSize: 25.sp),
                       ),
                     ),
@@ -110,19 +141,23 @@ class logiScreen extends StatelessWidget {
                   ),
                   InkWell(
                     onTap: () {
-                      Navigator.pushNamed(context, RoutesName.signUp);
+                      Navigator.pushNamedAndRemoveUntil(
+                          context, RoutesName.login, (route) => false);
                     },
                     child: Text.rich(
                       TextSpan(
                         children: [
                           TextSpan(
-                            text: "Don't have an account ?",
+                            text: "I have an account ?",
                             style:
                                 TextStyle(fontSize: 15.sp, color: Colors.blue),
-                          ),    TextSpan(
-                            text: "Create Account",
-                            style:
-                            TextStyle(fontSize: 17.sp, color: Colors.blue,fontWeight: FontWeight.w600),
+                          ),
+                          TextSpan(
+                            text: "Login",
+                            style: TextStyle(
+                                fontSize: 17.sp,
+                                color: Colors.blue,
+                                fontWeight: FontWeight.w600),
                           )
                         ],
                       ),

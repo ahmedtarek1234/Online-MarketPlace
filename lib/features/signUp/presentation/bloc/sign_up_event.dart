@@ -1,4 +1,8 @@
 part of 'sign_up_bloc.dart';
 
 @immutable
-sealed class SignUpEvent {}
+abstract class SignUpEvent {}
+class SignUpButtonEvent extends SignUpEvent{
+ signUpRequestModel requestModel;
+ SignUpButtonEvent(this.requestModel);
+}
