@@ -2,13 +2,13 @@ part of 'sign_up_bloc.dart';
 
 @immutable
 class SignUpState {
-  ScreenStatus? status;
+  RequestStatus? status;
   signUpModel? model;
   Failurs? failurs;
 
   SignUpState({this.failurs, this.status, this.model});
 
-  SignUpState copyWith({ScreenStatus? status,
+  SignUpState copyWith({RequestStatus? status,
       signUpModel? model,
       Failurs? failurs}){
     return SignUpState(
@@ -19,6 +19,6 @@ class SignUpState {
 }
 class signUpInitState extends SignUpState{
   signUpInitState():super(
-      status: ScreenStatus.init
+      status: RequestStatus.init
   );
 }

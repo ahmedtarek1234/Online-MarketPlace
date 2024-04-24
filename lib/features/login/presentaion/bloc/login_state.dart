@@ -2,14 +2,14 @@ part of 'login_bloc.dart';
 
 @immutable
 class LoginState {
-  ScreenStatus? status;
+  RequestStatus? status;
   ResponseEntity? entity;
   Failurs? failurs;
 
   LoginState({this.entity, this.status, this.failurs});
 
   LoginState copWith({
-    ScreenStatus? status,
+    RequestStatus? status,
     ResponseEntity? entity,
     Failurs? failurs,
   }) {
@@ -23,6 +23,6 @@ class LoginState {
 
 class LoginInitState extends LoginState{
   LoginInitState():super(
-    status: ScreenStatus.init
+    status: RequestStatus.init
   );
 }

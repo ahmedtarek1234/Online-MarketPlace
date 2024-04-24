@@ -14,12 +14,12 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
 
   LoginBloc(this.LoginUseCase) : super(LoginInitState()) {
     on<LoginButtonEvent>((event, emit) async {
-      emit(state.copWith(status: ScreenStatus.loading));
+      emit(state.copWith(status: RequestStatus.loading));
       var result = await LoginUseCase.call(event.email, event.password);
       result.fold((l) {
-        emit(state.copWith(status: ScreenStatus.failure,failurs: l));
+        emit(state.copWith(status: RequestStatus.failure,failurs: l));
       }, (r) {
-        emit(state.copWith(status: ScreenStatus.success,entity: r));
+        emit(state.copWith(status: RequestStatus.success,entity: r));
       });
     });
   }

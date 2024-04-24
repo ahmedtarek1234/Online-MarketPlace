@@ -26,17 +26,17 @@ class logiScreen extends StatelessWidget {
       ),
       child: BlocConsumer<LoginBloc, LoginState>(
         listener: (context, state) {
-          if (state.status == ScreenStatus.loading) {
+          if (state.status == RequestStatus.loading) {
             showDialog(
               context: context,
               builder: (context) => AlertDialog(
                 title: Center(child: CircularProgressIndicator()),
               ),
             );
-          } else if (state.status == ScreenStatus.success) {
+          } else if (state.status == RequestStatus.success) {
             Navigator.pushNamedAndRemoveUntil(
                 context, RoutesName.home, (route) => false);
-          } else if (state.status == ScreenStatus.failure) {
+          } else if (state.status == RequestStatus.failure) {
             showDialog(
               context: context,
               builder: (context) => AlertDialog(
@@ -119,10 +119,13 @@ class logiScreen extends StatelessWidget {
                             text: "Don't have an account ?",
                             style:
                                 TextStyle(fontSize: 15.sp, color: Colors.blue),
-                          ),    TextSpan(
-                            text: "Create Account",
-                            style:
-                            TextStyle(fontSize: 17.sp, color: Colors.blue,fontWeight: FontWeight.w600),
+                          ),
+                          TextSpan(
+                            text: " Create Account",
+                            style: TextStyle(
+                                fontSize: 17.sp,
+                                color: Colors.blue,
+                                fontWeight: FontWeight.w600),
                           )
                         ],
                       ),

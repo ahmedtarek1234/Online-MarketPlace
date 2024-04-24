@@ -30,17 +30,17 @@ class SignUpScreen extends StatelessWidget {
       ),
       child: BlocConsumer<SignUpBloc, SignUpState>(
         listener: (context, state) {
-          if (state.status == ScreenStatus.loading) {
+          if (state.status == RequestStatus.loading) {
             showDialog(
               context: context,
               builder: (context) => AlertDialog(
                 title: Center(child: CircularProgressIndicator()),
               ),
             );
-          } else if (state.status == ScreenStatus.success) {
+          } else if (state.status == RequestStatus.success) {
             Navigator.pushNamedAndRemoveUntil(
                 context, RoutesName.home, (route) => false);
-          } else if (state.status == ScreenStatus.failure) {
+          } else if (state.status == RequestStatus.failure) {
             showDialog(
               context: context,
               builder: (context) => AlertDialog(
@@ -153,7 +153,7 @@ class SignUpScreen extends StatelessWidget {
                                 TextStyle(fontSize: 15.sp, color: Colors.blue),
                           ),
                           TextSpan(
-                            text: "Login",
+                            text: " Login",
                             style: TextStyle(
                                 fontSize: 17.sp,
                                 color: Colors.blue,
