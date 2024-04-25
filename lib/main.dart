@@ -1,11 +1,8 @@
-import 'package:bloc/bloc.dart';
+import 'package:e_commerce_c10_monday/config.dart';
+import 'package:e_commerce_c10_monday/my_app.dart';
 import 'package:flutter/material.dart';
 
-import 'core/utils/observer.dart';
-import 'my_app.dart';
-
 void main() {
-  Bloc.observer = MyBlocObserver();
+  configureDependencies();
   runApp(const MyApp());
 }
-

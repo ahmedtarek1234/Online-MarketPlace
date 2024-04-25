@@ -1,5 +1,4 @@
-
-import 'package:e_commerce/config/routes/routes.dart';
+import 'package:e_commerce_c10_monday/config/routes/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -14,9 +13,7 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       builder: (context, child) => MaterialApp(
         debugShowCheckedModeBanner: false,
-        initialRoute: "login",
-        onGenerateRoute:(settings) => AppRoutes.onGenerate(settings) ,
-
+        onGenerateRoute: (settings) => AppRoute.onGenerate(settings),
       ),
     );
   }

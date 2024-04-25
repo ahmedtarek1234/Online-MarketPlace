@@ -3,22 +3,20 @@ part of 'sign_up_bloc.dart';
 @immutable
 class SignUpState {
   RequestStatus? status;
-  signUpModel? model;
-  Failurs? failurs;
+  SignUpModel? model;
+  Failures? failures;
 
-  SignUpState({this.failurs, this.status, this.model});
+  SignUpState({this.status, this.model, this.failures});
 
-  SignUpState copyWith({RequestStatus? status,
-      signUpModel? model,
-      Failurs? failurs}){
+  SignUpState copyWith(
+      {RequestStatus? status, SignUpModel? model, Failures? failures}) {
     return SignUpState(
-        status: status ?? this.status,
         model: model ?? this.model,
-        failurs: failurs ?? this.failurs);
+        failures: failures ?? this.failures,
+        status: status ?? this.status);
   }
 }
-class signUpInitState extends SignUpState{
-  signUpInitState():super(
-      status: RequestStatus.init
-  );
+
+class SignUpInitState extends SignUpState {
+  SignUpInitState() : super(status: RequestStatus.init);
 }

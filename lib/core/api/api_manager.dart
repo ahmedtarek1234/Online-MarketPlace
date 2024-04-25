@@ -1,20 +1,24 @@
 import 'package:dio/dio.dart';
-import 'package:e_commerce/core/utils/constants.dart';
+import 'package:e_commerce_c10_monday/core/utils/constants.dart';
+import 'package:injectable/injectable.dart';
 
-class ApiManager {
+@lazySingleton
+class ApiManager{
+
   late Dio dio;
 
-  ApiManager() {
-    dio = Dio();
+  ApiManager(){
+    dio=Dio();
   }
 
-  Future<Response>getData({required String endPoint,Map<String,dynamic>? queryParam}){
 
-    return dio.get(constants.BaseUrl+endPoint,queryParameters: queryParam);
+  Future<Response> getData(String endPoint,{Map<String, dynamic>? param}){
+   return dio.get(Constants.baseURL+endPoint,queryParameters: param);
   }
 
-  Future<Response>postData({required String endPoint,Map<String,dynamic>? body}){
 
-    return dio.post(constants.BaseUrl+endPoint,data: body);
+  Future<Response> postData(String endPoint,{Map<String, dynamic>? body}){
+    return dio.post(Constants.baseURL+endPoint,data: body);
   }
+
 }

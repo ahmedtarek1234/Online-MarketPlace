@@ -1,30 +1,32 @@
-import 'package:e_commerce/config/routes/routes.dart';
-import 'package:e_commerce/core/enums/screen_status.dart';
-import 'package:e_commerce/features/signUp/data/dataSource/remote/signUp_Ds_Impl.dart';
-import 'package:e_commerce/features/signUp/data/repositry/signUP_repo_impl.dart';
-import 'package:e_commerce/features/signUp/domain/entity/signUp_Request_Model.dart';
-import 'package:e_commerce/features/signUp/domain/repositry/SignUpRepo.dart';
-import 'package:e_commerce/features/signUp/domain/usecases/signUp_useCase.dart';
-import 'package:e_commerce/features/signUp/presentation/bloc/sign_up_bloc.dart';
+import 'package:e_commerce_c10_monday/config/routes/app_router.dart';
+import 'package:e_commerce_c10_monday/core/components/reuseable_components.dart';
+import 'package:e_commerce_c10_monday/core/utils/app_colors.dart';
+import 'package:e_commerce_c10_monday/features/signUp/data/data_sources/signup_ds_impl.dart';
+import 'package:e_commerce_c10_monday/features/signUp/data/repositories/signUp_repo_impl.dart';
+import 'package:e_commerce_c10_monday/features/signUp/domain/entities/SignUpRequestModel.dart';
+import 'package:e_commerce_c10_monday/features/signUp/domain/use_cases/signup_usecase.dart';
+import 'package:e_commerce_c10_monday/features/signUp/presentation/bloc/sign_up_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../core/enums/enums.dart';
+
 class SignUpScreen extends StatelessWidget {
   SignUpScreen({super.key});
 
-  var emailController = TextEditingController();
   var userNameController = TextEditingController();
   var phoneController = TextEditingController();
+  var emailController = TextEditingController();
   var passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => SignUpBloc(
-        signUpUseCase(
+        SignUpUseCase(
           SignUpRepoImpl(
-            signUpDsImpl(),
+            SignUpDSImpl(),
           ),
         ),
       ),
@@ -39,130 +41,96 @@ class SignUpScreen extends StatelessWidget {
             );
           } else if (state.status == RequestStatus.success) {
             Navigator.pushNamedAndRemoveUntil(
-                context, RoutesName.home, (route) => false);
+                context, AppRoutesName.home, (route) => false);
           } else if (state.status == RequestStatus.failure) {
             showDialog(
               context: context,
               builder: (context) => AlertDialog(
                 title: Text("Error"),
-                content: Text(state.failurs?.message ?? ""),
+                content: Text(state.failures?.message ?? ""),
               ),
             );
           }
         },
         builder: (context, state) {
           return Scaffold(
-            backgroundColor: Colors.white,
-            appBar: AppBar(
-              title: Text("SignUp "),
-            ),
-            body: SingleChildScrollView(
+            backgroundColor: AppColors.BackGround,
+            body: Padding(
+              padding: EdgeInsets.all(8.r),
               child: Column(
-                children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.only(top: 60.0),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 15),
-                    child: TextFormField(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  routeField(
                       controller: userNameController,
-                      decoration: InputDecoration(
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(20)),
-                          labelText: 'User Name',
-                          hintText: 'Enter Your User Name'),
-                    ),
+                      label: "Username",
+                      radius: 16,
+                      setBackgroundColor: true),
+                  SizedBox(
+                    height: 18.h,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(
-                        left: 15.0, right: 15.0, top: 30, bottom: 0),
-                    child: TextFormField(
+                  routeField(
                       controller: phoneController,
-                      decoration: InputDecoration(
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(20.r)),
-                          labelText: 'phone',
-                          hintText: 'Enter Your Phone'),
-                    ),
+                      label: "Phone",
+                      radius: 16,
+                      setBackgroundColor: true),
+                  SizedBox(
+                    height: 18.h,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(
-                        left: 15.0, right: 15.0, top: 30, bottom: 0),
-                    child: TextFormField(
+                  routeField(
                       controller: emailController,
-                      decoration: InputDecoration(
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(20.r)),
-                          labelText: 'Email',
-                          hintText: 'Enter valid email id as abc@gmail.com'),
-                    ),
+                      label: "Email",
+                      radius: 25,
+                      setBackgroundColor: true),
+                  SizedBox(
+                    height: 18.h,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(
-                        left: 15.0, right: 15.0, top: 30, bottom: 0),
-                    child: TextFormField(
+                  routeField(
                       controller: passwordController,
-                      obscureText: true,
-                      decoration: InputDecoration(
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(20)),
-                          labelText: 'Password',
-                          hintText: 'Enter your password'),
-                    ),
+                      label: "Password",
+                      radius: 16,
+                      setBackgroundColor: true),
+                  SizedBox(
+                    height: 18.h,
                   ),
                   SizedBox(
-                    height: 130.h,
-                  ),
-                  Container(
-                    height: 50.h,
-                    width: 250.w,
-                    decoration: BoxDecoration(
-                        color: Colors.blue,
-                        borderRadius: BorderRadius.circular(20)),
-                    child: MaterialButton(
-                      onPressed: () {
-                        signUpRequestModel requestModel = signUpRequestModel(
-                            name: "Ahmed",
-                            email: "ahmedTarek@gamil.com",
-                            phone: "01099461631",
-                            password: "123456789",
-                            rePassword: "123456789");
-                        BlocProvider.of<SignUpBloc>(context)
-                            .add(SignUpButtonEvent(requestModel));
-                      },
-                      child: Text(
-                        'SignUP',
-                        style: TextStyle(color: Colors.white, fontSize: 25.sp),
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 50.h,
-                  ),
-                  InkWell(
-                    onTap: () {
-                      Navigator.pushNamedAndRemoveUntil(
-                          context, RoutesName.login, (route) => false);
-                    },
-                    child: Text.rich(
-                      TextSpan(
-                        children: [
+                      width: double.infinity,
+                      child: ElevatedButton(
+                          onPressed: () {
+                            SignUpRequestModel request = SignUpRequestModel(
+                                name: "mohnaed",
+                                phone: "01110944551",
+                                email: "ahmedmohamedaliahim@gmail.com",
+                                password: "123@Ramy",
+                                rePassword: "123@Ramy");
+                            BlocProvider.of<SignUpBloc>(context)
+                                .add(SignUpButtonEvent(request));
+                          },
+                          child: const Text("SignUp"))),
+                  Padding(
+                    padding: EdgeInsets.only(top: 32.h),
+                    child: Center(
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.pushNamedAndRemoveUntil(
+                              context, AppRoutesName.login, (route) => false);
+                        },
+                        child: Text.rich(
                           TextSpan(
-                            text: "I have an account ?",
-                            style:
-                                TextStyle(fontSize: 15.sp, color: Colors.blue),
+                            children: [
+                              TextSpan(
+                                  text: "I have an account ?",
+                                  style: TextStyle(
+                                      fontSize: 12.sp, color: Colors.white)),
+                              TextSpan(
+                                  text: " " + 'Login',
+                                  style: TextStyle(
+                                      fontSize: 16.sp, color: Colors.white)),
+                            ],
                           ),
-                          TextSpan(
-                            text: " Login",
-                            style: TextStyle(
-                                fontSize: 17.sp,
-                                color: Colors.blue,
-                                fontWeight: FontWeight.w600),
-                          )
-                        ],
+                        ),
                       ),
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
