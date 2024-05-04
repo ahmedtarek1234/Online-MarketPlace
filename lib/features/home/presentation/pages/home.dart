@@ -1,10 +1,5 @@
 import 'package:e_commerce_c10_monday/config.dart';
-import 'package:e_commerce_c10_monday/core/api/api_manager.dart';
 import 'package:e_commerce_c10_monday/core/utils/app_colors.dart';
-import 'package:e_commerce_c10_monday/features/home/data/data_sources/home_ds_impl.dart';
-import 'package:e_commerce_c10_monday/features/home/data/repositories/home_repo_impl.dart';
-import 'package:e_commerce_c10_monday/features/home/domain/use_cases/get_brands_useCase.dart';
-import 'package:e_commerce_c10_monday/features/home/domain/use_cases/get_categories_useCase.dart';
 import 'package:e_commerce_c10_monday/features/home/presentation/bloc/home_bloc.dart';
 import 'package:e_commerce_c10_monday/features/home/presentation/pages/tabs/fav_tab.dart';
 import 'package:e_commerce_c10_monday/features/home/presentation/pages/tabs/home_tab.dart';
@@ -24,7 +19,8 @@ class HomeScreen extends StatelessWidget {
       create: (context) => getIt<HomeBloc>()
         ..add(GetBrandsEvent())
         ..add(GetProductsEvent())
-        ..add(GetCategoriesEvent()),
+        ..add(GetCategoriesEvent())
+      ..add(GetCartEvent()),
       child: BlocBuilder<HomeBloc, HomeState>(
         builder: (context, state) {
           return Scaffold(
@@ -94,10 +90,13 @@ class HomeScreen extends StatelessWidget {
                       ),
                       InkWell(
                         onTap: () {},
-                        child: Icon(
-                          Icons.shopping_cart,
-                          size: 30.0.sp,
-                          color: Color(0xff004182),
+                        child: Badge(
+                          label: Text(state.cartIteams.toString()),
+                          child: Icon(
+                            Icons.shopping_cart,
+                            size: 30.0.sp,
+                            color: Color(0xff004182),
+                          ),
                         ),
                       ),
                     ],

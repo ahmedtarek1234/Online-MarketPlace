@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:e_commerce_c10_monday/core/cache/shared_pref.dart';
 import 'package:e_commerce_c10_monday/core/enums/enums.dart';
 import 'package:e_commerce_c10_monday/core/errors/failuers.dart';
 import 'package:e_commerce_c10_monday/features/login/domain/entity/ResponseEntity.dart';
@@ -25,6 +26,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       result.fold((l) {
         emit(state.copyWith(status: RequestStatus.failure, failures: l));
       }, (r) {
+        CacheHelper.saveData("Token", r.token);
         emit(state.copyWith(status: RequestStatus.success, responseEntity: r));
       });
     });

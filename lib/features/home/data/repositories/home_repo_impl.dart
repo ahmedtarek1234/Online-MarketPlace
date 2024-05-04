@@ -2,6 +2,7 @@ import 'package:dartz/dartz.dart';
 import 'package:e_commerce_c10_monday/core/errors/failuers.dart';
 import 'package:e_commerce_c10_monday/features/home/data/data_sources/home_ds.dart';
 import 'package:e_commerce_c10_monday/features/home/data/models/BrandModel.dart';
+import 'package:e_commerce_c10_monday/features/home/data/models/CartModel.dart';
 import 'package:e_commerce_c10_monday/features/home/data/models/CategoryModel.dart';
 import 'package:e_commerce_c10_monday/features/home/data/models/ProductModel.dart';
 import 'package:e_commerce_c10_monday/features/home/domain/repositories/home_repo.dart';
@@ -24,7 +25,7 @@ class HomeRepoImpl implements HomeRepo {
   }
 
   @override
-  Future<Either<Failures, CategoryModel>> getCategories()async {
+  Future<Either<Failures, CategoryModel>> getCategories() async {
     try {
       var result = await homeDS.getCategories();
       return Right(result);
@@ -34,9 +35,29 @@ class HomeRepoImpl implements HomeRepo {
   }
 
   @override
-  Future<Either<Failures, ProductModel>> getProducts() async{
+  Future<Either<Failures, ProductModel>> getProducts() async {
     try {
       var result = await homeDS.getProducts();
+      return Right(result);
+    } catch (e) {
+      return Left(RemoteFailures(e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Failures, CartModel>> addToCart(String productId) async {
+    try {
+      var result = await homeDS.AddToCart(productId);
+      return Right(result);
+    } catch (e) {
+      return Left(RemoteFailures(e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Failures, int>> getCartIteams()async {
+    try {
+      var result = await homeDS.GetCartIteam();
       return Right(result);
     } catch (e) {
       return Left(RemoteFailures(e.toString()));

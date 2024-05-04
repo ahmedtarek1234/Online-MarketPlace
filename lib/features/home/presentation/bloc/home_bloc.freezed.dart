@@ -22,6 +22,8 @@ mixin _$HomeEvent {
     required TResult Function() getBrands,
     required TResult Function() getProducts,
     required TResult Function() getCategories,
+    required TResult Function(String productId) AddToCart,
+    required TResult Function() getCart,
     required TResult Function(int index) changeBottomNavBar,
   }) =>
       throw _privateConstructorUsedError;
@@ -31,6 +33,8 @@ mixin _$HomeEvent {
     TResult? Function()? getBrands,
     TResult? Function()? getProducts,
     TResult? Function()? getCategories,
+    TResult? Function(String productId)? AddToCart,
+    TResult? Function()? getCart,
     TResult? Function(int index)? changeBottomNavBar,
   }) =>
       throw _privateConstructorUsedError;
@@ -40,6 +44,8 @@ mixin _$HomeEvent {
     TResult Function()? getBrands,
     TResult Function()? getProducts,
     TResult Function()? getCategories,
+    TResult Function(String productId)? AddToCart,
+    TResult Function()? getCart,
     TResult Function(int index)? changeBottomNavBar,
     required TResult orElse(),
   }) =>
@@ -50,6 +56,8 @@ mixin _$HomeEvent {
     required TResult Function(GetBrandsEvent value) getBrands,
     required TResult Function(GetProductsEvent value) getProducts,
     required TResult Function(GetCategoriesEvent value) getCategories,
+    required TResult Function(AddToCartEvent value) AddToCart,
+    required TResult Function(GetCartEvent value) getCart,
     required TResult Function(ChangeNavBar value) changeBottomNavBar,
   }) =>
       throw _privateConstructorUsedError;
@@ -59,6 +67,8 @@ mixin _$HomeEvent {
     TResult? Function(GetBrandsEvent value)? getBrands,
     TResult? Function(GetProductsEvent value)? getProducts,
     TResult? Function(GetCategoriesEvent value)? getCategories,
+    TResult? Function(AddToCartEvent value)? AddToCart,
+    TResult? Function(GetCartEvent value)? getCart,
     TResult? Function(ChangeNavBar value)? changeBottomNavBar,
   }) =>
       throw _privateConstructorUsedError;
@@ -68,6 +78,8 @@ mixin _$HomeEvent {
     TResult Function(GetBrandsEvent value)? getBrands,
     TResult Function(GetProductsEvent value)? getProducts,
     TResult Function(GetCategoriesEvent value)? getCategories,
+    TResult Function(AddToCartEvent value)? AddToCart,
+    TResult Function(GetCartEvent value)? getCart,
     TResult Function(ChangeNavBar value)? changeBottomNavBar,
     required TResult orElse(),
   }) =>
@@ -133,6 +145,8 @@ class _$StartedImpl implements _Started {
     required TResult Function() getBrands,
     required TResult Function() getProducts,
     required TResult Function() getCategories,
+    required TResult Function(String productId) AddToCart,
+    required TResult Function() getCart,
     required TResult Function(int index) changeBottomNavBar,
   }) {
     return started();
@@ -145,6 +159,8 @@ class _$StartedImpl implements _Started {
     TResult? Function()? getBrands,
     TResult? Function()? getProducts,
     TResult? Function()? getCategories,
+    TResult? Function(String productId)? AddToCart,
+    TResult? Function()? getCart,
     TResult? Function(int index)? changeBottomNavBar,
   }) {
     return started?.call();
@@ -157,6 +173,8 @@ class _$StartedImpl implements _Started {
     TResult Function()? getBrands,
     TResult Function()? getProducts,
     TResult Function()? getCategories,
+    TResult Function(String productId)? AddToCart,
+    TResult Function()? getCart,
     TResult Function(int index)? changeBottomNavBar,
     required TResult orElse(),
   }) {
@@ -173,6 +191,8 @@ class _$StartedImpl implements _Started {
     required TResult Function(GetBrandsEvent value) getBrands,
     required TResult Function(GetProductsEvent value) getProducts,
     required TResult Function(GetCategoriesEvent value) getCategories,
+    required TResult Function(AddToCartEvent value) AddToCart,
+    required TResult Function(GetCartEvent value) getCart,
     required TResult Function(ChangeNavBar value) changeBottomNavBar,
   }) {
     return started(this);
@@ -185,6 +205,8 @@ class _$StartedImpl implements _Started {
     TResult? Function(GetBrandsEvent value)? getBrands,
     TResult? Function(GetProductsEvent value)? getProducts,
     TResult? Function(GetCategoriesEvent value)? getCategories,
+    TResult? Function(AddToCartEvent value)? AddToCart,
+    TResult? Function(GetCartEvent value)? getCart,
     TResult? Function(ChangeNavBar value)? changeBottomNavBar,
   }) {
     return started?.call(this);
@@ -197,6 +219,8 @@ class _$StartedImpl implements _Started {
     TResult Function(GetBrandsEvent value)? getBrands,
     TResult Function(GetProductsEvent value)? getProducts,
     TResult Function(GetCategoriesEvent value)? getCategories,
+    TResult Function(AddToCartEvent value)? AddToCart,
+    TResult Function(GetCartEvent value)? getCart,
     TResult Function(ChangeNavBar value)? changeBottomNavBar,
     required TResult orElse(),
   }) {
@@ -253,6 +277,8 @@ class _$GetBrandsEventImpl implements GetBrandsEvent {
     required TResult Function() getBrands,
     required TResult Function() getProducts,
     required TResult Function() getCategories,
+    required TResult Function(String productId) AddToCart,
+    required TResult Function() getCart,
     required TResult Function(int index) changeBottomNavBar,
   }) {
     return getBrands();
@@ -265,6 +291,8 @@ class _$GetBrandsEventImpl implements GetBrandsEvent {
     TResult? Function()? getBrands,
     TResult? Function()? getProducts,
     TResult? Function()? getCategories,
+    TResult? Function(String productId)? AddToCart,
+    TResult? Function()? getCart,
     TResult? Function(int index)? changeBottomNavBar,
   }) {
     return getBrands?.call();
@@ -277,6 +305,8 @@ class _$GetBrandsEventImpl implements GetBrandsEvent {
     TResult Function()? getBrands,
     TResult Function()? getProducts,
     TResult Function()? getCategories,
+    TResult Function(String productId)? AddToCart,
+    TResult Function()? getCart,
     TResult Function(int index)? changeBottomNavBar,
     required TResult orElse(),
   }) {
@@ -293,6 +323,8 @@ class _$GetBrandsEventImpl implements GetBrandsEvent {
     required TResult Function(GetBrandsEvent value) getBrands,
     required TResult Function(GetProductsEvent value) getProducts,
     required TResult Function(GetCategoriesEvent value) getCategories,
+    required TResult Function(AddToCartEvent value) AddToCart,
+    required TResult Function(GetCartEvent value) getCart,
     required TResult Function(ChangeNavBar value) changeBottomNavBar,
   }) {
     return getBrands(this);
@@ -305,6 +337,8 @@ class _$GetBrandsEventImpl implements GetBrandsEvent {
     TResult? Function(GetBrandsEvent value)? getBrands,
     TResult? Function(GetProductsEvent value)? getProducts,
     TResult? Function(GetCategoriesEvent value)? getCategories,
+    TResult? Function(AddToCartEvent value)? AddToCart,
+    TResult? Function(GetCartEvent value)? getCart,
     TResult? Function(ChangeNavBar value)? changeBottomNavBar,
   }) {
     return getBrands?.call(this);
@@ -317,6 +351,8 @@ class _$GetBrandsEventImpl implements GetBrandsEvent {
     TResult Function(GetBrandsEvent value)? getBrands,
     TResult Function(GetProductsEvent value)? getProducts,
     TResult Function(GetCategoriesEvent value)? getCategories,
+    TResult Function(AddToCartEvent value)? AddToCart,
+    TResult Function(GetCartEvent value)? getCart,
     TResult Function(ChangeNavBar value)? changeBottomNavBar,
     required TResult orElse(),
   }) {
@@ -373,6 +409,8 @@ class _$GetProductsEventImpl implements GetProductsEvent {
     required TResult Function() getBrands,
     required TResult Function() getProducts,
     required TResult Function() getCategories,
+    required TResult Function(String productId) AddToCart,
+    required TResult Function() getCart,
     required TResult Function(int index) changeBottomNavBar,
   }) {
     return getProducts();
@@ -385,6 +423,8 @@ class _$GetProductsEventImpl implements GetProductsEvent {
     TResult? Function()? getBrands,
     TResult? Function()? getProducts,
     TResult? Function()? getCategories,
+    TResult? Function(String productId)? AddToCart,
+    TResult? Function()? getCart,
     TResult? Function(int index)? changeBottomNavBar,
   }) {
     return getProducts?.call();
@@ -397,6 +437,8 @@ class _$GetProductsEventImpl implements GetProductsEvent {
     TResult Function()? getBrands,
     TResult Function()? getProducts,
     TResult Function()? getCategories,
+    TResult Function(String productId)? AddToCart,
+    TResult Function()? getCart,
     TResult Function(int index)? changeBottomNavBar,
     required TResult orElse(),
   }) {
@@ -413,6 +455,8 @@ class _$GetProductsEventImpl implements GetProductsEvent {
     required TResult Function(GetBrandsEvent value) getBrands,
     required TResult Function(GetProductsEvent value) getProducts,
     required TResult Function(GetCategoriesEvent value) getCategories,
+    required TResult Function(AddToCartEvent value) AddToCart,
+    required TResult Function(GetCartEvent value) getCart,
     required TResult Function(ChangeNavBar value) changeBottomNavBar,
   }) {
     return getProducts(this);
@@ -425,6 +469,8 @@ class _$GetProductsEventImpl implements GetProductsEvent {
     TResult? Function(GetBrandsEvent value)? getBrands,
     TResult? Function(GetProductsEvent value)? getProducts,
     TResult? Function(GetCategoriesEvent value)? getCategories,
+    TResult? Function(AddToCartEvent value)? AddToCart,
+    TResult? Function(GetCartEvent value)? getCart,
     TResult? Function(ChangeNavBar value)? changeBottomNavBar,
   }) {
     return getProducts?.call(this);
@@ -437,6 +483,8 @@ class _$GetProductsEventImpl implements GetProductsEvent {
     TResult Function(GetBrandsEvent value)? getBrands,
     TResult Function(GetProductsEvent value)? getProducts,
     TResult Function(GetCategoriesEvent value)? getCategories,
+    TResult Function(AddToCartEvent value)? AddToCart,
+    TResult Function(GetCartEvent value)? getCart,
     TResult Function(ChangeNavBar value)? changeBottomNavBar,
     required TResult orElse(),
   }) {
@@ -493,6 +541,8 @@ class _$GetCategoriesEventImpl implements GetCategoriesEvent {
     required TResult Function() getBrands,
     required TResult Function() getProducts,
     required TResult Function() getCategories,
+    required TResult Function(String productId) AddToCart,
+    required TResult Function() getCart,
     required TResult Function(int index) changeBottomNavBar,
   }) {
     return getCategories();
@@ -505,6 +555,8 @@ class _$GetCategoriesEventImpl implements GetCategoriesEvent {
     TResult? Function()? getBrands,
     TResult? Function()? getProducts,
     TResult? Function()? getCategories,
+    TResult? Function(String productId)? AddToCart,
+    TResult? Function()? getCart,
     TResult? Function(int index)? changeBottomNavBar,
   }) {
     return getCategories?.call();
@@ -517,6 +569,8 @@ class _$GetCategoriesEventImpl implements GetCategoriesEvent {
     TResult Function()? getBrands,
     TResult Function()? getProducts,
     TResult Function()? getCategories,
+    TResult Function(String productId)? AddToCart,
+    TResult Function()? getCart,
     TResult Function(int index)? changeBottomNavBar,
     required TResult orElse(),
   }) {
@@ -533,6 +587,8 @@ class _$GetCategoriesEventImpl implements GetCategoriesEvent {
     required TResult Function(GetBrandsEvent value) getBrands,
     required TResult Function(GetProductsEvent value) getProducts,
     required TResult Function(GetCategoriesEvent value) getCategories,
+    required TResult Function(AddToCartEvent value) AddToCart,
+    required TResult Function(GetCartEvent value) getCart,
     required TResult Function(ChangeNavBar value) changeBottomNavBar,
   }) {
     return getCategories(this);
@@ -545,6 +601,8 @@ class _$GetCategoriesEventImpl implements GetCategoriesEvent {
     TResult? Function(GetBrandsEvent value)? getBrands,
     TResult? Function(GetProductsEvent value)? getProducts,
     TResult? Function(GetCategoriesEvent value)? getCategories,
+    TResult? Function(AddToCartEvent value)? AddToCart,
+    TResult? Function(GetCartEvent value)? getCart,
     TResult? Function(ChangeNavBar value)? changeBottomNavBar,
   }) {
     return getCategories?.call(this);
@@ -557,6 +615,8 @@ class _$GetCategoriesEventImpl implements GetCategoriesEvent {
     TResult Function(GetBrandsEvent value)? getBrands,
     TResult Function(GetProductsEvent value)? getProducts,
     TResult Function(GetCategoriesEvent value)? getCategories,
+    TResult Function(AddToCartEvent value)? AddToCart,
+    TResult Function(GetCartEvent value)? getCart,
     TResult Function(ChangeNavBar value)? changeBottomNavBar,
     required TResult orElse(),
   }) {
@@ -569,6 +629,303 @@ class _$GetCategoriesEventImpl implements GetCategoriesEvent {
 
 abstract class GetCategoriesEvent implements HomeEvent {
   const factory GetCategoriesEvent() = _$GetCategoriesEventImpl;
+}
+
+/// @nodoc
+abstract class _$$AddToCartEventImplCopyWith<$Res> {
+  factory _$$AddToCartEventImplCopyWith(_$AddToCartEventImpl value,
+          $Res Function(_$AddToCartEventImpl) then) =
+      __$$AddToCartEventImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String productId});
+}
+
+/// @nodoc
+class __$$AddToCartEventImplCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$AddToCartEventImpl>
+    implements _$$AddToCartEventImplCopyWith<$Res> {
+  __$$AddToCartEventImplCopyWithImpl(
+      _$AddToCartEventImpl _value, $Res Function(_$AddToCartEventImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? productId = null,
+  }) {
+    return _then(_$AddToCartEventImpl(
+      null == productId
+          ? _value.productId
+          : productId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AddToCartEventImpl implements AddToCartEvent {
+  const _$AddToCartEventImpl(this.productId);
+
+  @override
+  final String productId;
+
+  @override
+  String toString() {
+    return 'HomeEvent.AddToCart(productId: $productId)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddToCartEventImpl &&
+            (identical(other.productId, productId) ||
+                other.productId == productId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, productId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AddToCartEventImplCopyWith<_$AddToCartEventImpl> get copyWith =>
+      __$$AddToCartEventImplCopyWithImpl<_$AddToCartEventImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() getBrands,
+    required TResult Function() getProducts,
+    required TResult Function() getCategories,
+    required TResult Function(String productId) AddToCart,
+    required TResult Function() getCart,
+    required TResult Function(int index) changeBottomNavBar,
+  }) {
+    return AddToCart(productId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? getBrands,
+    TResult? Function()? getProducts,
+    TResult? Function()? getCategories,
+    TResult? Function(String productId)? AddToCart,
+    TResult? Function()? getCart,
+    TResult? Function(int index)? changeBottomNavBar,
+  }) {
+    return AddToCart?.call(productId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? getBrands,
+    TResult Function()? getProducts,
+    TResult Function()? getCategories,
+    TResult Function(String productId)? AddToCart,
+    TResult Function()? getCart,
+    TResult Function(int index)? changeBottomNavBar,
+    required TResult orElse(),
+  }) {
+    if (AddToCart != null) {
+      return AddToCart(productId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(GetBrandsEvent value) getBrands,
+    required TResult Function(GetProductsEvent value) getProducts,
+    required TResult Function(GetCategoriesEvent value) getCategories,
+    required TResult Function(AddToCartEvent value) AddToCart,
+    required TResult Function(GetCartEvent value) getCart,
+    required TResult Function(ChangeNavBar value) changeBottomNavBar,
+  }) {
+    return AddToCart(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(GetBrandsEvent value)? getBrands,
+    TResult? Function(GetProductsEvent value)? getProducts,
+    TResult? Function(GetCategoriesEvent value)? getCategories,
+    TResult? Function(AddToCartEvent value)? AddToCart,
+    TResult? Function(GetCartEvent value)? getCart,
+    TResult? Function(ChangeNavBar value)? changeBottomNavBar,
+  }) {
+    return AddToCart?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(GetBrandsEvent value)? getBrands,
+    TResult Function(GetProductsEvent value)? getProducts,
+    TResult Function(GetCategoriesEvent value)? getCategories,
+    TResult Function(AddToCartEvent value)? AddToCart,
+    TResult Function(GetCartEvent value)? getCart,
+    TResult Function(ChangeNavBar value)? changeBottomNavBar,
+    required TResult orElse(),
+  }) {
+    if (AddToCart != null) {
+      return AddToCart(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AddToCartEvent implements HomeEvent {
+  const factory AddToCartEvent(final String productId) = _$AddToCartEventImpl;
+
+  String get productId;
+  @JsonKey(ignore: true)
+  _$$AddToCartEventImplCopyWith<_$AddToCartEventImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetCartEventImplCopyWith<$Res> {
+  factory _$$GetCartEventImplCopyWith(
+          _$GetCartEventImpl value, $Res Function(_$GetCartEventImpl) then) =
+      __$$GetCartEventImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetCartEventImplCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$GetCartEventImpl>
+    implements _$$GetCartEventImplCopyWith<$Res> {
+  __$$GetCartEventImplCopyWithImpl(
+      _$GetCartEventImpl _value, $Res Function(_$GetCartEventImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetCartEventImpl implements GetCartEvent {
+  const _$GetCartEventImpl();
+
+  @override
+  String toString() {
+    return 'HomeEvent.getCart()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$GetCartEventImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() getBrands,
+    required TResult Function() getProducts,
+    required TResult Function() getCategories,
+    required TResult Function(String productId) AddToCart,
+    required TResult Function() getCart,
+    required TResult Function(int index) changeBottomNavBar,
+  }) {
+    return getCart();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? getBrands,
+    TResult? Function()? getProducts,
+    TResult? Function()? getCategories,
+    TResult? Function(String productId)? AddToCart,
+    TResult? Function()? getCart,
+    TResult? Function(int index)? changeBottomNavBar,
+  }) {
+    return getCart?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? getBrands,
+    TResult Function()? getProducts,
+    TResult Function()? getCategories,
+    TResult Function(String productId)? AddToCart,
+    TResult Function()? getCart,
+    TResult Function(int index)? changeBottomNavBar,
+    required TResult orElse(),
+  }) {
+    if (getCart != null) {
+      return getCart();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(GetBrandsEvent value) getBrands,
+    required TResult Function(GetProductsEvent value) getProducts,
+    required TResult Function(GetCategoriesEvent value) getCategories,
+    required TResult Function(AddToCartEvent value) AddToCart,
+    required TResult Function(GetCartEvent value) getCart,
+    required TResult Function(ChangeNavBar value) changeBottomNavBar,
+  }) {
+    return getCart(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(GetBrandsEvent value)? getBrands,
+    TResult? Function(GetProductsEvent value)? getProducts,
+    TResult? Function(GetCategoriesEvent value)? getCategories,
+    TResult? Function(AddToCartEvent value)? AddToCart,
+    TResult? Function(GetCartEvent value)? getCart,
+    TResult? Function(ChangeNavBar value)? changeBottomNavBar,
+  }) {
+    return getCart?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(GetBrandsEvent value)? getBrands,
+    TResult Function(GetProductsEvent value)? getProducts,
+    TResult Function(GetCategoriesEvent value)? getCategories,
+    TResult Function(AddToCartEvent value)? AddToCart,
+    TResult Function(GetCartEvent value)? getCart,
+    TResult Function(ChangeNavBar value)? changeBottomNavBar,
+    required TResult orElse(),
+  }) {
+    if (getCart != null) {
+      return getCart(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetCartEvent implements HomeEvent {
+  const factory GetCartEvent() = _$GetCartEventImpl;
 }
 
 /// @nodoc
@@ -639,6 +996,8 @@ class _$ChangeNavBarImpl implements ChangeNavBar {
     required TResult Function() getBrands,
     required TResult Function() getProducts,
     required TResult Function() getCategories,
+    required TResult Function(String productId) AddToCart,
+    required TResult Function() getCart,
     required TResult Function(int index) changeBottomNavBar,
   }) {
     return changeBottomNavBar(index);
@@ -651,6 +1010,8 @@ class _$ChangeNavBarImpl implements ChangeNavBar {
     TResult? Function()? getBrands,
     TResult? Function()? getProducts,
     TResult? Function()? getCategories,
+    TResult? Function(String productId)? AddToCart,
+    TResult? Function()? getCart,
     TResult? Function(int index)? changeBottomNavBar,
   }) {
     return changeBottomNavBar?.call(index);
@@ -663,6 +1024,8 @@ class _$ChangeNavBarImpl implements ChangeNavBar {
     TResult Function()? getBrands,
     TResult Function()? getProducts,
     TResult Function()? getCategories,
+    TResult Function(String productId)? AddToCart,
+    TResult Function()? getCart,
     TResult Function(int index)? changeBottomNavBar,
     required TResult orElse(),
   }) {
@@ -679,6 +1042,8 @@ class _$ChangeNavBarImpl implements ChangeNavBar {
     required TResult Function(GetBrandsEvent value) getBrands,
     required TResult Function(GetProductsEvent value) getProducts,
     required TResult Function(GetCategoriesEvent value) getCategories,
+    required TResult Function(AddToCartEvent value) AddToCart,
+    required TResult Function(GetCartEvent value) getCart,
     required TResult Function(ChangeNavBar value) changeBottomNavBar,
   }) {
     return changeBottomNavBar(this);
@@ -691,6 +1056,8 @@ class _$ChangeNavBarImpl implements ChangeNavBar {
     TResult? Function(GetBrandsEvent value)? getBrands,
     TResult? Function(GetProductsEvent value)? getProducts,
     TResult? Function(GetCategoriesEvent value)? getCategories,
+    TResult? Function(AddToCartEvent value)? AddToCart,
+    TResult? Function(GetCartEvent value)? getCart,
     TResult? Function(ChangeNavBar value)? changeBottomNavBar,
   }) {
     return changeBottomNavBar?.call(this);
@@ -703,6 +1070,8 @@ class _$ChangeNavBarImpl implements ChangeNavBar {
     TResult Function(GetBrandsEvent value)? getBrands,
     TResult Function(GetProductsEvent value)? getProducts,
     TResult Function(GetCategoriesEvent value)? getCategories,
+    TResult Function(AddToCartEvent value)? AddToCart,
+    TResult Function(GetCartEvent value)? getCart,
     TResult Function(ChangeNavBar value)? changeBottomNavBar,
     required TResult orElse(),
   }) {
@@ -727,8 +1096,11 @@ mixin _$HomeState {
   RequestStatus get getBrandsStatus => throw _privateConstructorUsedError;
   RequestStatus get getProductsStatus => throw _privateConstructorUsedError;
   RequestStatus get getCategoriesStatus => throw _privateConstructorUsedError;
+  RequestStatus get addToCart => throw _privateConstructorUsedError;
+  RequestStatus get getCartIteamStatus => throw _privateConstructorUsedError;
   BrandModel? get brandModel => throw _privateConstructorUsedError;
   int get currentIndex => throw _privateConstructorUsedError;
+  int get cartIteams => throw _privateConstructorUsedError;
   CategoryModel? get categoryModel => throw _privateConstructorUsedError;
   ProductModel? get productModel => throw _privateConstructorUsedError;
   Failures? get brandFailure => throw _privateConstructorUsedError;
@@ -749,8 +1121,11 @@ abstract class $HomeStateCopyWith<$Res> {
       {RequestStatus getBrandsStatus,
       RequestStatus getProductsStatus,
       RequestStatus getCategoriesStatus,
+      RequestStatus addToCart,
+      RequestStatus getCartIteamStatus,
       BrandModel? brandModel,
       int currentIndex,
+      int cartIteams,
       CategoryModel? categoryModel,
       ProductModel? productModel,
       Failures? brandFailure,
@@ -774,8 +1149,11 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
     Object? getBrandsStatus = null,
     Object? getProductsStatus = null,
     Object? getCategoriesStatus = null,
+    Object? addToCart = null,
+    Object? getCartIteamStatus = null,
     Object? brandModel = freezed,
     Object? currentIndex = null,
+    Object? cartIteams = null,
     Object? categoryModel = freezed,
     Object? productModel = freezed,
     Object? brandFailure = freezed,
@@ -795,6 +1173,14 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
           ? _value.getCategoriesStatus
           : getCategoriesStatus // ignore: cast_nullable_to_non_nullable
               as RequestStatus,
+      addToCart: null == addToCart
+          ? _value.addToCart
+          : addToCart // ignore: cast_nullable_to_non_nullable
+              as RequestStatus,
+      getCartIteamStatus: null == getCartIteamStatus
+          ? _value.getCartIteamStatus
+          : getCartIteamStatus // ignore: cast_nullable_to_non_nullable
+              as RequestStatus,
       brandModel: freezed == brandModel
           ? _value.brandModel
           : brandModel // ignore: cast_nullable_to_non_nullable
@@ -802,6 +1188,10 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
       currentIndex: null == currentIndex
           ? _value.currentIndex
           : currentIndex // ignore: cast_nullable_to_non_nullable
+              as int,
+      cartIteams: null == cartIteams
+          ? _value.cartIteams
+          : cartIteams // ignore: cast_nullable_to_non_nullable
               as int,
       categoryModel: freezed == categoryModel
           ? _value.categoryModel
@@ -839,8 +1229,11 @@ abstract class _$$HomeStateImplCopyWith<$Res>
       {RequestStatus getBrandsStatus,
       RequestStatus getProductsStatus,
       RequestStatus getCategoriesStatus,
+      RequestStatus addToCart,
+      RequestStatus getCartIteamStatus,
       BrandModel? brandModel,
       int currentIndex,
+      int cartIteams,
       CategoryModel? categoryModel,
       ProductModel? productModel,
       Failures? brandFailure,
@@ -862,8 +1255,11 @@ class __$$HomeStateImplCopyWithImpl<$Res>
     Object? getBrandsStatus = null,
     Object? getProductsStatus = null,
     Object? getCategoriesStatus = null,
+    Object? addToCart = null,
+    Object? getCartIteamStatus = null,
     Object? brandModel = freezed,
     Object? currentIndex = null,
+    Object? cartIteams = null,
     Object? categoryModel = freezed,
     Object? productModel = freezed,
     Object? brandFailure = freezed,
@@ -883,6 +1279,14 @@ class __$$HomeStateImplCopyWithImpl<$Res>
           ? _value.getCategoriesStatus
           : getCategoriesStatus // ignore: cast_nullable_to_non_nullable
               as RequestStatus,
+      addToCart: null == addToCart
+          ? _value.addToCart
+          : addToCart // ignore: cast_nullable_to_non_nullable
+              as RequestStatus,
+      getCartIteamStatus: null == getCartIteamStatus
+          ? _value.getCartIteamStatus
+          : getCartIteamStatus // ignore: cast_nullable_to_non_nullable
+              as RequestStatus,
       brandModel: freezed == brandModel
           ? _value.brandModel
           : brandModel // ignore: cast_nullable_to_non_nullable
@@ -890,6 +1294,10 @@ class __$$HomeStateImplCopyWithImpl<$Res>
       currentIndex: null == currentIndex
           ? _value.currentIndex
           : currentIndex // ignore: cast_nullable_to_non_nullable
+              as int,
+      cartIteams: null == cartIteams
+          ? _value.cartIteams
+          : cartIteams // ignore: cast_nullable_to_non_nullable
               as int,
       categoryModel: freezed == categoryModel
           ? _value.categoryModel
@@ -922,8 +1330,11 @@ class _$HomeStateImpl implements _HomeState {
       {this.getBrandsStatus = RequestStatus.init,
       this.getProductsStatus = RequestStatus.init,
       this.getCategoriesStatus = RequestStatus.init,
+      this.addToCart = RequestStatus.init,
+      this.getCartIteamStatus = RequestStatus.init,
       this.brandModel,
       this.currentIndex = 0,
+      this.cartIteams = 0,
       this.categoryModel,
       this.productModel,
       this.brandFailure,
@@ -940,10 +1351,19 @@ class _$HomeStateImpl implements _HomeState {
   @JsonKey()
   final RequestStatus getCategoriesStatus;
   @override
+  @JsonKey()
+  final RequestStatus addToCart;
+  @override
+  @JsonKey()
+  final RequestStatus getCartIteamStatus;
+  @override
   final BrandModel? brandModel;
   @override
   @JsonKey()
   final int currentIndex;
+  @override
+  @JsonKey()
+  final int cartIteams;
   @override
   final CategoryModel? categoryModel;
   @override
@@ -957,7 +1377,7 @@ class _$HomeStateImpl implements _HomeState {
 
   @override
   String toString() {
-    return 'HomeState(getBrandsStatus: $getBrandsStatus, getProductsStatus: $getProductsStatus, getCategoriesStatus: $getCategoriesStatus, brandModel: $brandModel, currentIndex: $currentIndex, categoryModel: $categoryModel, productModel: $productModel, brandFailure: $brandFailure, categoryFailure: $categoryFailure, productFailure: $productFailure)';
+    return 'HomeState(getBrandsStatus: $getBrandsStatus, getProductsStatus: $getProductsStatus, getCategoriesStatus: $getCategoriesStatus, addToCart: $addToCart, getCartIteamStatus: $getCartIteamStatus, brandModel: $brandModel, currentIndex: $currentIndex, cartIteams: $cartIteams, categoryModel: $categoryModel, productModel: $productModel, brandFailure: $brandFailure, categoryFailure: $categoryFailure, productFailure: $productFailure)';
   }
 
   @override
@@ -971,10 +1391,16 @@ class _$HomeStateImpl implements _HomeState {
                 other.getProductsStatus == getProductsStatus) &&
             (identical(other.getCategoriesStatus, getCategoriesStatus) ||
                 other.getCategoriesStatus == getCategoriesStatus) &&
+            (identical(other.addToCart, addToCart) ||
+                other.addToCart == addToCart) &&
+            (identical(other.getCartIteamStatus, getCartIteamStatus) ||
+                other.getCartIteamStatus == getCartIteamStatus) &&
             (identical(other.brandModel, brandModel) ||
                 other.brandModel == brandModel) &&
             (identical(other.currentIndex, currentIndex) ||
                 other.currentIndex == currentIndex) &&
+            (identical(other.cartIteams, cartIteams) ||
+                other.cartIteams == cartIteams) &&
             (identical(other.categoryModel, categoryModel) ||
                 other.categoryModel == categoryModel) &&
             (identical(other.productModel, productModel) ||
@@ -993,8 +1419,11 @@ class _$HomeStateImpl implements _HomeState {
       getBrandsStatus,
       getProductsStatus,
       getCategoriesStatus,
+      addToCart,
+      getCartIteamStatus,
       brandModel,
       currentIndex,
+      cartIteams,
       categoryModel,
       productModel,
       brandFailure,
@@ -1013,8 +1442,11 @@ abstract class _HomeState implements HomeState {
       {final RequestStatus getBrandsStatus,
       final RequestStatus getProductsStatus,
       final RequestStatus getCategoriesStatus,
+      final RequestStatus addToCart,
+      final RequestStatus getCartIteamStatus,
       final BrandModel? brandModel,
       final int currentIndex,
+      final int cartIteams,
       final CategoryModel? categoryModel,
       final ProductModel? productModel,
       final Failures? brandFailure,
@@ -1028,9 +1460,15 @@ abstract class _HomeState implements HomeState {
   @override
   RequestStatus get getCategoriesStatus;
   @override
+  RequestStatus get addToCart;
+  @override
+  RequestStatus get getCartIteamStatus;
+  @override
   BrandModel? get brandModel;
   @override
   int get currentIndex;
+  @override
+  int get cartIteams;
   @override
   CategoryModel? get categoryModel;
   @override

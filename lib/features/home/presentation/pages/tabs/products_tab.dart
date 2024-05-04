@@ -1,3 +1,4 @@
+import 'package:e_commerce_c10_monday/core/enums/enums.dart';
 import 'package:e_commerce_c10_monday/features/home/presentation/bloc/home_bloc.dart';
 import 'package:e_commerce_c10_monday/features/home/presentation/widgets/product_item.dart';
 import 'package:flutter/material.dart';
@@ -9,7 +10,12 @@ class ProductsTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<HomeBloc,HomeState>(
+    return BlocConsumer<HomeBloc,HomeState>(
+      listener: (context, state) {
+        if(state.addToCart==RequestStatus.success){
+          BlocProvider.of<HomeBloc>(context).add(GetCartEvent());
+        }
+      },
 
       builder: (context, state) {
       return  GridView.builder(

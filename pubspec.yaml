@@ -39,6 +39,7 @@ dependencies:
   injectable: ^2.3.5
   injectable_generator: ^2.4.2
   get_it: ^7.6.7
+  shared_preferences: ^2.2.3
 
 
 dev_dependencies:
